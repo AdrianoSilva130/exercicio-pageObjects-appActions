@@ -5,7 +5,8 @@ describe('Fluxo de compra do produto Aero Daily Fitness Tee', () => {
 
     // Seleciona o produto específico e clica
     cy.get('.products .product-block').contains('Aero Daily Fitness Tee').click();
-    cy.get('.button-variable-item-XS').click();
+    cy.wait(500)
+    cy.get('.button-variable-item-XL').click();
     cy.get('.button-variable-item-Black').click();
     cy.get('input.qty').clear().type('1');
 
@@ -13,7 +14,10 @@ describe('Fluxo de compra do produto Aero Daily Fitness Tee', () => {
   cy.get('.single_add_to_cart_button').click();
 
 cy.wait(1000);  
-cy.clicarBotaoMensagemCarrinho();
+cy.get('.woocommerce-message > .button').click();
+
+cy.get('.checkout-button').click();
+cy.get('.showlogin').click();
 
     // Faz login
     cy.get('#username').type('adriano.teste@teste.com');

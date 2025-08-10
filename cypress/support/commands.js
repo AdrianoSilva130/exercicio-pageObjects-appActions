@@ -52,10 +52,3 @@ Cypress.Commands.add('preencherCheckout', (dados) => {
 Cypress.Commands.add('finalizarPedido', () => {
   cy.get('#place_order').click();
 });
-
-Cypress.Commands.add('clicarBotaoMensagemCarrinho', () => {
-  cy.get('.woocommerce-message > .button', { timeout: 10000 }) // espera até 10s
-    .should('be.visible')
-    .and('not.be.disabled')
-    .click();
-});
