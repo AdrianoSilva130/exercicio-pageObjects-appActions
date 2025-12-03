@@ -29,6 +29,8 @@ describe("Carrinho - Testes com Intercept", () => {
     cy.get('[data-testid="btn-add-cart"]').first().click()
 
     cy.wait("@addItem").its("response.statusCode").should("eq", 200)
+
+    cy.compareSnapshot(Cypress.currentTest.title)
   })
 
   it("Deve simular remover item do carrinho", () => {
@@ -49,6 +51,8 @@ describe("Carrinho - Testes com Intercept", () => {
     cy.wait("@removeItem")
       .its("response.body.cart.items.length")
       .should("eq", 0)
+
+      cy.compareSnapshot(Cypress.currentTest.title)
   })
 
   it("Deve simular atualizar quantidade do item", () => {
@@ -76,5 +80,7 @@ describe("Carrinho - Testes com Intercept", () => {
     cy.wait("@updateItem")
       .its("response.body.cart.items[0].quantidade")
       .should("eq", 3)
+
+      cy.compareSnapshot(Cypress.currentTest.title)
   })
 })

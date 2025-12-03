@@ -52,3 +52,7 @@ Cypress.Commands.add('preencherCheckout', (dados) => {
 Cypress.Commands.add('finalizarPedido', () => {
   cy.get('#place_order').click();
 });
+
+const compareSnapshotCommand = require("cypress-lens/dist/command");
+
+compareSnapshotCommand();
