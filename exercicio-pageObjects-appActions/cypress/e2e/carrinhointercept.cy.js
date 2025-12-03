@@ -2,7 +2,7 @@ describe("Carrinho - Testes com Intercept", () => {
 
   beforeEach(() => {
     cy.setCookie("ebacStoreVersion", "v2")
-    cy.visit("/")
+    cy.visit('/')
   })
 
   it("Deve simular adicionar item no carrinho", () => {

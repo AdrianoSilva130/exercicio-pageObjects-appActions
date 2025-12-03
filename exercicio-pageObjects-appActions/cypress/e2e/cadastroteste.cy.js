@@ -5,7 +5,7 @@ describe('Fluxo de criação e edição de conta', () => {
 
   beforeEach(() => {
     cy.setCookie('ebacStoreVersion', 'v3', { domain: 'lojaebac.ebaconline.art.br' });
-    cy.visit('/');
+    cy.visit('/')
   });
 
   it('Deve criar uma conta com sucesso', () => {

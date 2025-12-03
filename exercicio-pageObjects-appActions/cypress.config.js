@@ -7,7 +7,7 @@ module.exports = defineConfig({
   video: false,
 
   e2e: {
-    baseUrl: "http://lojaebac.ebaconline.art.br/my-account/",
+    baseUrl: "https://lojaebac.ebaconline.art.br/my-account/",
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx}",
     setupNodeEvents(on, config) {
      
