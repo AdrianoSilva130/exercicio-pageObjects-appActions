@@ -1,12 +1,18 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  e2e: { 
-    baseUrl: 'http://lojaebac.ebaconline.art.br/my-account/',
-    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
-    
+  reporter: "mochawesome",
+  reporterOptions: {
+    reportDir: "mochawesome-report",
+    overwrite: false,
+    html: true,
+    json: true
   },
+
+  e2e: {
+    baseUrl: "http://lojaebac.ebaconline.art.br/my-account/",
+    setupNodeEvents(on, config) {
+
+    }
+  }
 });
