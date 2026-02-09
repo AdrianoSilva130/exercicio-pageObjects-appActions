@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-02-09T16:22:08.982Z",
-    "end": "2026-02-09T16:22:22.429Z",
-    "duration": 13447,
+    "start": "2026-02-09T18:04:36.628Z",
+    "end": "2026-02-09T18:04:50.725Z",
+    "duration": 14097,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "56fb4a99-bb76-4ad8-a10d-fb64e8b55a4c",
+      "uuid": "6b4c0d70-37ef-48a6-b647-254c03f469be",
       "title": "",
-      "fullFile": "cypress/e2e/cadastroteste.cy.js",
-      "file": "cypress/e2e/cadastroteste.cy.js",
+      "fullFile": "cypress\\e2e\\cadastroteste.cy.js",
+      "file": "cypress\\e2e\\cadastroteste.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "f1099f30-c4d6-45c7-81b6-7c5831917cc6",
+          "uuid": "8ec4e15e-d191-43b9-8930-3859e02f2acf",
           "title": "Fluxo de criação e edição de conta",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve criar uma conta com sucesso",
               "fullTitle": "Fluxo de criação e edição de conta Deve criar uma conta com sucesso",
               "timedOut": null,
-              "duration": 13418,
+              "duration": 14058,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "var nome = _faker.faker.person.firstName();\nvar email = _faker.faker.internet.email(nome);\nvar sobrenome = _faker.faker.person.lastName();\ncy.get('#reg_email').type(email);\ncy.get('#reg_password').type('teste@123');\ncy.get(':nth-child(4) > .button').click();\ncy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist');\ncy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click();\ncy.get('#account_first_name').type(nome);\ncy.get('#account_last_name').type(sobrenome);\ncy.get('.woocommerce-Button').click();\ncy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.');",
               "err": {},
-              "uuid": "9dbd0a8d-c56c-483d-8884-95e22157c7e2",
-              "parentUUID": "f1099f30-c4d6-45c7-81b6-7c5831917cc6",
+              "uuid": "159a3c6b-5cc0-41a4-bf8c-6e9a887ec930",
+              "parentUUID": "8ec4e15e-d191-43b9-8930-3859e02f2acf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9dbd0a8d-c56c-483d-8884-95e22157c7e2"
+            "159a3c6b-5cc0-41a4-bf8c-6e9a887ec930"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 13418,
+          "duration": 14058,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -83,8 +83,8 @@
     "mochawesome": {
       "options": {
         "quiet": false,
-        "reportFilename": "mochawesome",
-        "saveHtml": true,
+        "reportFilename": "index.html",
+        "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -96,7 +96,8 @@
       "options": {
         "reportDir": "mochawesome-report",
         "overwrite": false,
-        "html": true,
+        "reportFilename": "index.html",
+        "html": false,
         "json": true
       },
       "version": "6.3.2"

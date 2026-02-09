@@ -2,23 +2,23 @@
   "stats": {
     "suites": 4,
     "tests": 4,
-    "passes": 4,
+    "passes": 3,
     "pending": 0,
-    "failures": 0,
+    "failures": 1,
     "testsRegistered": 4,
-    "passPercent": 100,
+    "passPercent": 75,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2026-02-09T16:09:22.621Z",
-    "end": "2026-02-09T16:22:47.443Z",
-    "duration": 804822
+    "start": "2026-02-09T18:04:36.628Z",
+    "end": "2026-02-09T18:11:35.608Z",
+    "duration": 418980
   },
   "results": [
     {
-      "uuid": "196a1bc2-2394-49e8-b8ce-f20d97865a04",
+      "uuid": "6b4c0d70-37ef-48a6-b647-254c03f469be",
       "title": "",
       "fullFile": "cypress\\e2e\\cadastroteste.cy.js",
       "file": "cypress\\e2e\\cadastroteste.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "efeffbd0-77a9-490b-9e72-87f2309cffbc",
+          "uuid": "8ec4e15e-d191-43b9-8930-3859e02f2acf",
           "title": "Fluxo de criação e edição de conta",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Deve criar uma conta com sucesso",
               "fullTitle": "Fluxo de criação e edição de conta Deve criar uma conta com sucesso",
               "timedOut": null,
-              "duration": 9850,
+              "duration": 14058,
               "state": "passed",
-              "speed": "medium",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "var nome = _faker.faker.person.firstName();\nvar email = _faker.faker.internet.email(nome);\nvar sobrenome = _faker.faker.person.lastName();\ncy.get('#reg_email').type(email);\ncy.get('#reg_password').type('teste@123');\ncy.get(':nth-child(4) > .button').click();\ncy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist');\ncy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click();\ncy.get('#account_first_name').type(nome);\ncy.get('#account_last_name').type(sobrenome);\ncy.get('.woocommerce-Button').click();\ncy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.');",
               "err": {},
-              "uuid": "696b3f45-37c5-480b-aab0-8f20053b2cab",
-              "parentUUID": "efeffbd0-77a9-490b-9e72-87f2309cffbc",
+              "uuid": "159a3c6b-5cc0-41a4-bf8c-6e9a887ec930",
+              "parentUUID": "8ec4e15e-d191-43b9-8930-3859e02f2acf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "696b3f45-37c5-480b-aab0-8f20053b2cab"
+            "159a3c6b-5cc0-41a4-bf8c-6e9a887ec930"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9850,
+          "duration": 14058,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "9f60f216-6bef-48d9-bb8c-176292c090a4",
+      "uuid": "cbe332a2-8ade-4a3e-8064-2d19e2bb2033",
       "title": "",
       "fullFile": "cypress\\e2e\\checkout.cy.js",
       "file": "cypress\\e2e\\checkout.cy.js",
@@ -85,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d5744a41-e24d-452b-94e3-b6f9f255215b",
+          "uuid": "df9ef7da-37b9-4412-9784-71700a8414b1",
           "title": "Fluxo de compra com AppActions",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "Seleciona produto, faz login e finaliza a compra",
               "fullTitle": "Fluxo de compra com AppActions Seleciona produto, faz login e finaliza a compra",
               "timedOut": null,
-              "duration": 16602,
+              "duration": 19538,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -105,20 +105,20 @@
               "context": null,
               "code": "const cliente = {\n  nome: 'Adriano',\n  sobrenome: 'Silva',\n  endereco: 'Rua Exemplo, 123',\n  cidade: 'São Paulo',\n  cep: '01010-010',\n  telefone: '11999999999',\n  email: 'usuario@teste.com'\n};\n_appActions.appActions.visitarProdutos();\n_appActions.appActions.selecionarProduto('Aero Daily Fitness Tee');\ncy.wait(1000);\n_appActions.appActions.selecionarTamanhoL();\ncy.wait(1000);\n_appActions.appActions.selecionarCorBlack();\n_appActions.appActions.definirQuantidade(1);\n_appActions.appActions.adicionarAoCarrinho();\ncy.wait(2000);\n_appActions.appActions.abrirCarrinho();\n_appActions.appActions.irParaCheckout();\n_appActions.appActions.realizarLogin(cliente.email, 'senha@123');\n_appActions.appActions.preencherDadosCheckout(cliente);\n_appActions.appActions.aceitarTermos();\n_appActions.appActions.finalizarPedido();\ncy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.');",
               "err": {},
-              "uuid": "4de147e3-ef4e-45cc-ae06-447a3cebcf85",
-              "parentUUID": "d5744a41-e24d-452b-94e3-b6f9f255215b",
+              "uuid": "84ac597c-0790-42a5-bc38-0e2d116cc72a",
+              "parentUUID": "df9ef7da-37b9-4412-9784-71700a8414b1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4de147e3-ef4e-45cc-ae06-447a3cebcf85"
+            "84ac597c-0790-42a5-bc38-0e2d116cc72a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 16602,
+          "duration": 19538,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -134,7 +134,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "56fb4a99-bb76-4ad8-a10d-fb64e8b55a4c",
+      "uuid": "e1a74ffa-c1b7-47dc-8e7e-d98fd9d26982",
       "title": "",
       "fullFile": "cypress/e2e/cadastroteste.cy.js",
       "file": "cypress/e2e/cadastroteste.cy.js",
@@ -143,7 +143,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f1099f30-c4d6-45c7-81b6-7c5831917cc6",
+          "uuid": "59b33ec2-a5c5-4e69-8edc-e7414021e8ba",
           "title": "Fluxo de criação e edição de conta",
           "fullFile": "",
           "file": "",
@@ -154,29 +154,33 @@
               "title": "Deve criar uma conta com sucesso",
               "fullTitle": "Fluxo de criação e edição de conta Deve criar uma conta com sucesso",
               "timedOut": null,
-              "duration": 13418,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 10581,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "var nome = _faker.faker.person.firstName();\nvar email = _faker.faker.internet.email(nome);\nvar sobrenome = _faker.faker.person.lastName();\ncy.get('#reg_email').type(email);\ncy.get('#reg_password').type('teste@123');\ncy.get(':nth-child(4) > .button').click();\ncy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist');\ncy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click();\ncy.get('#account_first_name').type(nome);\ncy.get('#account_last_name').type(sobrenome);\ncy.get('.woocommerce-Button').click();\ncy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.');",
-              "err": {},
-              "uuid": "9dbd0a8d-c56c-483d-8884-95e22157c7e2",
-              "parentUUID": "f1099f30-c4d6-45c7-81b6-7c5831917cc6",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.woocommerce-MyAccount-content > :nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.woocommerce-MyAccount-content > :nth-child(2)`, but never found it.\n    at Context.eval (webpack://exercicio-pageobjects-appactions/./cypress/e2e/cadastroteste.cy.js:19:65)",
+                "diff": null
+              },
+              "uuid": "bce8b139-0568-4fb1-b7e3-0e7ef439e960",
+              "parentUUID": "59b33ec2-a5c5-4e69-8edc-e7414021e8ba",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "9dbd0a8d-c56c-483d-8884-95e22157c7e2"
+          "passes": [],
+          "failures": [
+            "bce8b139-0568-4fb1-b7e3-0e7ef439e960"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 13418,
+          "duration": 10581,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -192,7 +196,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "95475f07-b2d3-42d5-acb0-21e6bfdd30c9",
+      "uuid": "81916de1-4cc9-4771-81f3-bc3f31e0754d",
       "title": "",
       "fullFile": "cypress/e2e/checkout.cy.js",
       "file": "cypress/e2e/checkout.cy.js",
@@ -201,7 +205,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "829382a5-278e-4d29-b98d-d93e7fec410f",
+          "uuid": "68990dbf-4a52-4733-b3ac-de4d4a64f0ac",
           "title": "Fluxo de compra com AppActions",
           "fullFile": "",
           "file": "",
@@ -212,7 +216,7 @@
               "title": "Seleciona produto, faz login e finaliza a compra",
               "fullTitle": "Fluxo de compra com AppActions Seleciona produto, faz login e finaliza a compra",
               "timedOut": null,
-              "duration": 23611,
+              "duration": 23615,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -221,20 +225,20 @@
               "context": null,
               "code": "const cliente = {\n  nome: 'Adriano',\n  sobrenome: 'Silva',\n  endereco: 'Rua Exemplo, 123',\n  cidade: 'São Paulo',\n  cep: '01010-010',\n  telefone: '11999999999',\n  email: 'usuario@teste.com'\n};\n_appActions.appActions.visitarProdutos();\n_appActions.appActions.selecionarProduto('Aero Daily Fitness Tee');\ncy.wait(1000);\n_appActions.appActions.selecionarTamanhoL();\ncy.wait(1000);\n_appActions.appActions.selecionarCorBlack();\n_appActions.appActions.definirQuantidade(1);\n_appActions.appActions.adicionarAoCarrinho();\ncy.wait(2000);\n_appActions.appActions.abrirCarrinho();\n_appActions.appActions.irParaCheckout();\n_appActions.appActions.realizarLogin(cliente.email, 'senha@123');\n_appActions.appActions.preencherDadosCheckout(cliente);\n_appActions.appActions.aceitarTermos();\n_appActions.appActions.finalizarPedido();\ncy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.');",
               "err": {},
-              "uuid": "231e17a2-d80c-426b-9d47-f266c1a0d1bd",
-              "parentUUID": "829382a5-278e-4d29-b98d-d93e7fec410f",
+              "uuid": "2e1581b8-352c-4fc2-872d-c90c554579e6",
+              "parentUUID": "68990dbf-4a52-4733-b3ac-de4d4a64f0ac",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "231e17a2-d80c-426b-9d47-f266c1a0d1bd"
+            "2e1581b8-352c-4fc2-872d-c90c554579e6"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 23611,
+          "duration": 23615,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -257,8 +261,8 @@
     "mochawesome": {
       "options": {
         "quiet": false,
-        "reportFilename": "mochawesome",
-        "saveHtml": true,
+        "reportFilename": "index.html",
+        "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -270,7 +274,8 @@
       "options": {
         "reportDir": "mochawesome-report",
         "overwrite": false,
-        "html": true,
+        "reportFilename": "index.html",
+        "html": false,
         "json": true
       },
       "version": "6.3.2"

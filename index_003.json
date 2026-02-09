@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-02-09T16:09:33.702Z",
-    "end": "2026-02-09T16:09:50.355Z",
-    "duration": 16653,
+    "start": "2026-02-09T18:11:11.948Z",
+    "end": "2026-02-09T18:11:35.608Z",
+    "duration": 23660,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "9f60f216-6bef-48d9-bb8c-176292c090a4",
+      "uuid": "81916de1-4cc9-4771-81f3-bc3f31e0754d",
       "title": "",
-      "fullFile": "cypress\\e2e\\checkout.cy.js",
-      "file": "cypress\\e2e\\checkout.cy.js",
+      "fullFile": "cypress/e2e/checkout.cy.js",
+      "file": "cypress/e2e/checkout.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "d5744a41-e24d-452b-94e3-b6f9f255215b",
+          "uuid": "68990dbf-4a52-4733-b3ac-de4d4a64f0ac",
           "title": "Fluxo de compra com AppActions",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Seleciona produto, faz login e finaliza a compra",
               "fullTitle": "Fluxo de compra com AppActions Seleciona produto, faz login e finaliza a compra",
               "timedOut": null,
-              "duration": 16602,
+              "duration": 23615,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const cliente = {\n  nome: 'Adriano',\n  sobrenome: 'Silva',\n  endereco: 'Rua Exemplo, 123',\n  cidade: 'São Paulo',\n  cep: '01010-010',\n  telefone: '11999999999',\n  email: 'usuario@teste.com'\n};\n_appActions.appActions.visitarProdutos();\n_appActions.appActions.selecionarProduto('Aero Daily Fitness Tee');\ncy.wait(1000);\n_appActions.appActions.selecionarTamanhoL();\ncy.wait(1000);\n_appActions.appActions.selecionarCorBlack();\n_appActions.appActions.definirQuantidade(1);\n_appActions.appActions.adicionarAoCarrinho();\ncy.wait(2000);\n_appActions.appActions.abrirCarrinho();\n_appActions.appActions.irParaCheckout();\n_appActions.appActions.realizarLogin(cliente.email, 'senha@123');\n_appActions.appActions.preencherDadosCheckout(cliente);\n_appActions.appActions.aceitarTermos();\n_appActions.appActions.finalizarPedido();\ncy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.');",
               "err": {},
-              "uuid": "4de147e3-ef4e-45cc-ae06-447a3cebcf85",
-              "parentUUID": "d5744a41-e24d-452b-94e3-b6f9f255215b",
+              "uuid": "2e1581b8-352c-4fc2-872d-c90c554579e6",
+              "parentUUID": "68990dbf-4a52-4733-b3ac-de4d4a64f0ac",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4de147e3-ef4e-45cc-ae06-447a3cebcf85"
+            "2e1581b8-352c-4fc2-872d-c90c554579e6"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 16602,
+          "duration": 23615,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -83,8 +83,8 @@
     "mochawesome": {
       "options": {
         "quiet": false,
-        "reportFilename": "mochawesome",
-        "saveHtml": true,
+        "reportFilename": "index.html",
+        "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -96,7 +96,8 @@
       "options": {
         "reportDir": "mochawesome-report",
         "overwrite": false,
-        "html": true,
+        "reportFilename": "index.html",
+        "html": false,
         "json": true
       },
       "version": "6.3.2"
