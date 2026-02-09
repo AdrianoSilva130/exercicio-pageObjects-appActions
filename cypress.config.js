@@ -7,7 +7,7 @@ module.exports = defineConfig({
     overwrite: false,
     reportFilename: "index.html",
     html: true,
-    json: false
+    json: true
   },
 
   e2e: {
