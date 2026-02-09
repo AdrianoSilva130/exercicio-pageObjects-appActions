@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-09T18:04:36.628Z",
+    "end": "2026-02-09T18:04:50.725Z",
+    "duration": 14097,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6b4c0d70-37ef-48a6-b647-254c03f469be",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastroteste.cy.js",
+      "file": "cypress\\e2e\\cadastroteste.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ec4e15e-d191-43b9-8930-3859e02f2acf",
+          "title": "Fluxo de criação e edição de conta",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve criar uma conta com sucesso",
+              "fullTitle": "Fluxo de criação e edição de conta Deve criar uma conta com sucesso",
+              "timedOut": null,
+              "duration": 14058,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var nome = _faker.faker.person.firstName();\nvar email = _faker.faker.internet.email(nome);\nvar sobrenome = _faker.faker.person.lastName();\ncy.get('#reg_email').type(email);\ncy.get('#reg_password').type('teste@123');\ncy.get(':nth-child(4) > .button').click();\ncy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist');\ncy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click();\ncy.get('#account_first_name').type(nome);\ncy.get('#account_last_name').type(sobrenome);\ncy.get('.woocommerce-Button').click();\ncy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.');",
+              "err": {},
+              "uuid": "159a3c6b-5cc0-41a4-bf8c-6e9a887ec930",
+              "parentUUID": "8ec4e15e-d191-43b9-8930-3859e02f2acf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "159a3c6b-5cc0-41a4-bf8c-6e9a887ec930"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14058,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "index.html",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "reportFilename": "index.html",
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
