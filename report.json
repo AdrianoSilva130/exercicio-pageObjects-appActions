@@ -1,20 +1,20 @@
 {
   "stats": {
-    "suites": 4,
-    "tests": 4,
-    "passes": 3,
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
     "pending": 0,
-    "failures": 1,
-    "testsRegistered": 4,
-    "passPercent": 75,
+    "failures": 0,
+    "testsRegistered": 2,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
     "start": "2026-02-09T18:04:36.628Z",
-    "end": "2026-02-09T18:11:35.608Z",
-    "duration": 418980
+    "end": "2026-02-09T18:05:12.021Z",
+    "duration": 35393
   },
   "results": [
     {
@@ -119,126 +119,6 @@
           "pending": [],
           "skipped": [],
           "duration": 19538,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "e1a74ffa-c1b7-47dc-8e7e-d98fd9d26982",
-      "title": "",
-      "fullFile": "cypress/e2e/cadastroteste.cy.js",
-      "file": "cypress/e2e/cadastroteste.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "59b33ec2-a5c5-4e69-8edc-e7414021e8ba",
-          "title": "Fluxo de criação e edição de conta",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "Deve criar uma conta com sucesso",
-              "fullTitle": "Fluxo de criação e edição de conta Deve criar uma conta com sucesso",
-              "timedOut": null,
-              "duration": 10581,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "var nome = _faker.faker.person.firstName();\nvar email = _faker.faker.internet.email(nome);\nvar sobrenome = _faker.faker.person.lastName();\ncy.get('#reg_email').type(email);\ncy.get('#reg_password').type('teste@123');\ncy.get(':nth-child(4) > .button').click();\ncy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist');\ncy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click();\ncy.get('#account_first_name').type(nome);\ncy.get('#account_last_name').type(sobrenome);\ncy.get('.woocommerce-Button').click();\ncy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.');",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.woocommerce-MyAccount-content > :nth-child(2)`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.woocommerce-MyAccount-content > :nth-child(2)`, but never found it.\n    at Context.eval (webpack://exercicio-pageobjects-appactions/./cypress/e2e/cadastroteste.cy.js:19:65)",
-                "diff": null
-              },
-              "uuid": "bce8b139-0568-4fb1-b7e3-0e7ef439e960",
-              "parentUUID": "59b33ec2-a5c5-4e69-8edc-e7414021e8ba",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [],
-          "failures": [
-            "bce8b139-0568-4fb1-b7e3-0e7ef439e960"
-          ],
-          "pending": [],
-          "skipped": [],
-          "duration": 10581,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "81916de1-4cc9-4771-81f3-bc3f31e0754d",
-      "title": "",
-      "fullFile": "cypress/e2e/checkout.cy.js",
-      "file": "cypress/e2e/checkout.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "68990dbf-4a52-4733-b3ac-de4d4a64f0ac",
-          "title": "Fluxo de compra com AppActions",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "Seleciona produto, faz login e finaliza a compra",
-              "fullTitle": "Fluxo de compra com AppActions Seleciona produto, faz login e finaliza a compra",
-              "timedOut": null,
-              "duration": 23615,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const cliente = {\n  nome: 'Adriano',\n  sobrenome: 'Silva',\n  endereco: 'Rua Exemplo, 123',\n  cidade: 'São Paulo',\n  cep: '01010-010',\n  telefone: '11999999999',\n  email: 'usuario@teste.com'\n};\n_appActions.appActions.visitarProdutos();\n_appActions.appActions.selecionarProduto('Aero Daily Fitness Tee');\ncy.wait(1000);\n_appActions.appActions.selecionarTamanhoL();\ncy.wait(1000);\n_appActions.appActions.selecionarCorBlack();\n_appActions.appActions.definirQuantidade(1);\n_appActions.appActions.adicionarAoCarrinho();\ncy.wait(2000);\n_appActions.appActions.abrirCarrinho();\n_appActions.appActions.irParaCheckout();\n_appActions.appActions.realizarLogin(cliente.email, 'senha@123');\n_appActions.appActions.preencherDadosCheckout(cliente);\n_appActions.appActions.aceitarTermos();\n_appActions.appActions.finalizarPedido();\ncy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.');",
-              "err": {},
-              "uuid": "2e1581b8-352c-4fc2-872d-c90c554579e6",
-              "parentUUID": "68990dbf-4a52-4733-b3ac-de4d4a64f0ac",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "2e1581b8-352c-4fc2-872d-c90c554579e6"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 23615,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
