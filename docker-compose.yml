@@ -31,4 +31,4 @@ services:
     depends_on:
       - banco
       - loja
-    command: npx cypress run'''
+    command: npx cypress run
